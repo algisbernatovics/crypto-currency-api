@@ -5,8 +5,7 @@ namespace App;
 class App
 {
     protected array $records;
-
-
+    
     public function __construct($limit, $switch)
     {
         if ($switch == 1) {
