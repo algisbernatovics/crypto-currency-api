@@ -2,7 +2,7 @@
 
 namespace App;
 
-class ClientRequest
+class ClientRequestCurl
 
 {
     protected array $cryptoRes;

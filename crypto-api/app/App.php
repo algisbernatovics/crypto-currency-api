@@ -6,10 +6,16 @@ class App
 {
     protected array $records;
 
-    public function __construct($limit)
-    {
 
-        $request = new ClientRequest($limit);
+    public function __construct($limit, $switch)
+    {
+        if ($switch == 1) {
+            $request = new ClientRequestGuzzle($limit);
+        }
+        if ($switch == 2) {
+            $request = new ClientRequestCurl($limit);
+        }
+
         $data = new GetData($request->getCryptoRes());
         $this->records = $data->get();
     }
